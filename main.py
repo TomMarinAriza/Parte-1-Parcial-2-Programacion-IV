@@ -21,7 +21,7 @@ def run_tests():
     test_client = TestClient()
     test_recipt = TestRecipt()
 
-    test_antibiotics.antibiotic = antibiotics("Amoxicillin", "500mg", 100, ["cows", "pigs"])
+    test_antibiotics.antibiotic = antibiotics("Amoxicillin", int (500), 100,"bovino")
     test_control_product.control_product = plagueControl("ICA123", 150, "Insecticide", "monthly", 7)
     test_fertilizer.fertilizer = fertilizer("ICA456", 200, "Nitrogen", "yearly", "2023-09-01")
     test_client.client = client("John Doe", "123456")
