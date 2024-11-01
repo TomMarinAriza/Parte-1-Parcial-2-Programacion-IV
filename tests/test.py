@@ -2,7 +2,7 @@ import unittest
 from models.antibiotics import antibiotics  
 from models.controlProducts import plagueControl, fertilizer
 from models.client import client
-from models.recipt import recipt
+from models.bill import bill
 
 class TestAntibiotics(unittest.TestCase):
     def setUp(self):
@@ -59,10 +59,10 @@ class TestClient(unittest.TestCase):
         self.assertEqual(self.client.purchaseHistory(), [])
 
 
-class TestRecipt(unittest.TestCase):
+class TestBill(unittest.TestCase):
     def setUp(self):
        
-        self.recipt = recipt("2024-10-10", 500)
+        self.bill = bill("2024-10-10", 500)
 
     def test_recipt_attributes(self):
         self.assertEqual(self.recipt.date, "2024-10-10")

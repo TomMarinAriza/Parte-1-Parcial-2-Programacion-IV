@@ -5,13 +5,34 @@ class controlProduct :
         self.productName = productName
         self.frecuencyProdct = frecuencyProdct
 
+    @property
+    def IcaRegister(self):
+        return self.IcaRegister
+    
+    @IcaRegister.setter
+    def IcaRegister(self, IcaRegister):
+        self.IcaRegister = IcaRegister
+    
+    @property
+    def price(self):
+        return self.price
+    
+    @price.setter
+    def price(self, price):
+        self.price = price
 
-class plagueControl (controlProduct):
-    def __init__(self, IcaRegister, price , productName , frecuencyProdct , gracePeriod):
-        super().__init__(IcaRegister, price , productName , frecuencyProdct)
-        self.gracePeriod = gracePeriod
+    @property
+    def productName(self):
+        return self.productName
+    
+    @productName.setter
+    def productName(self, productName):
+        self.productName = productName
 
-class  fertilizer(controlProduct):
-    def __init__(self, IcaRegister, price, productName, frecuencyProdct, dateLastApllication):
-        super().__init__(IcaRegister, price, productName, frecuencyProdct)
-        self.dateLastApllication = dateLastApllication
+    @property
+    def frecuencyProdct(self):
+        return self.frecuencyProdct
+    
+    @frecuencyProdct.setter
+    def frecuencyProdct(self, frecuencyProdct):
+        self.frecuencyProdct = frecuencyProdct
