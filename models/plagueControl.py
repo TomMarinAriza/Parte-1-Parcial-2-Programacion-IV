@@ -1,4 +1,4 @@
-from controlProducts import controlProduct
+from models.controlProducts import controlProduct
 
 class plagueControl (controlProduct):
     def __init__(self, IcaRegister, price , productName , frecuencyProdct , gracePeriod):

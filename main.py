@@ -1,18 +1,17 @@
 import unittest
-from models.controlProducts import plagueControl
-from models.controlProducts import fertilizer
+from models.plagueControl import plagueControl
+from models.fertilizer import fertilizer
 from models.antibiotics import Antibiotics
 from models.client import Client
 from models.bill import Bill
-from UI import ShopUI
-from crud.client import clientCrud
+from UI.ui import ShopUI
+from crud.client import ClientCrud as clientCrud
 
 from tests.test import (
     TestAntibiotics,
-    TestControlProduct,
     TestFertilizer,
     TestClient,
-    TestRecipt,
+    TestBill,
 )
 
 class TestShopUI(unittest.TestCase):
@@ -82,30 +81,19 @@ def interactiveShop(shopUI):
             print("Invalid option. Please try again.")
 
 def runTests():
-    testAntibiotics = TestAntibiotics()
-    testControlProduct = TestControlProduct()
-    testFertilizer = TestFertilizer()
-    testClient = TestClient()
-    testRecipt = TestRecipt()
-    testShopUI = TestShopUI()
-
-    testAntibiotics.antibiotic = Antibiotics("Amoxicillin", 500, 100, "bovino")
-    testControlProduct.control_product = plagueControl("ICA123", 150, "Insecticide", "monthly", 7)
-    testFertilizer.fertilizer = fertilizer("ICA456", 200, "Nitrogen", "yearly", "2023-09-01")
-    testClient.client = Client("John Doe", "123456")
-    testRecipt.recipt = Bill("2024-10-10", 500)
-
     loader = unittest.TestLoader()
     suite = unittest.TestSuite()
+
+    # Asegúrate de que las siguientes son clases que heredan de unittest.TestCase
     suite.addTests(loader.loadTestsFromTestCase(TestAntibiotics))
-    suite.addTests(loader.loadTestsFromTestCase(TestControlProduct))
     suite.addTests(loader.loadTestsFromTestCase(TestFertilizer))
     suite.addTests(loader.loadTestsFromTestCase(TestClient))
-    suite.addTests(loader.loadTestsFromTestCase(TestRecipt))
+    suite.addTests(loader.loadTestsFromTestCase(TestBill))
     suite.addTests(loader.loadTestsFromTestCase(TestShopUI))
 
     runner = unittest.TextTestRunner()
     runner.run(suite)
+
 
 if __name__ == "__main__":
     runTests()

@@ -1,10 +1,14 @@
-from controlProducts import controlProduct
+from models.controlProducts import controlProduct
 
-class  fertilizer(controlProduct):
-    def __init__(self, IcaRegister, price, productName, frecuencyProdct, dateLastApllication):
-        super().__init__(IcaRegister, price, productName, frecuencyProdct)
-        self.dateLastApllication = dateLastApllication
+class fertilizer(controlProduct):
+    def __init__(self, icaRegister, price, productName, frequencyProduct, dateLastApplication):
+        super().__init__(icaRegister, price, productName, frequencyProduct)
+        self._dateLastApplication = dateLastApplication 
     
     @property
-    def dateLastApllication(self):
-        return self.dateLastApllication
+    def dateLastApplication(self):
+        return self._dateLastApplication 
+
+    @dateLastApplication.setter
+    def dateLastApplication(self, dateLastApplication):
+        self._dateLastApplication = dateLastApplication 

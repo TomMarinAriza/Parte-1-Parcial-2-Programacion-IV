@@ -39,4 +39,4 @@ class ShopUI:
        
         client.addBills(bill)
         print(f"Bill created for {client.name} on {bill.date}. Total: ${bill.price}.")
-        self.shoppingCart.clear() 
+        self.shoppingCart.clear()   

@@ -1,38 +1,38 @@
-class controlProduct :
-    def __init__(self, IcaRegister, price , productName , frecuencyProdct ):
-        self.IcaRegister = IcaRegister 
-        self.price = price
-        self.productName = productName
-        self.frecuencyProdct = frecuencyProdct
+class controlProduct:
+    def __init__(self, icaRegister, price, productName, frequencyProduct):
+        self._icaRegister = icaRegister  
+        self._price = price              
+        self._productName = productName  
+        self._frequencyProduct = frequencyProduct  
 
     @property
     def IcaRegister(self):
-        return self.IcaRegister
+        return self._icaRegister  
     
     @IcaRegister.setter
-    def IcaRegister(self, IcaRegister):
-        self.IcaRegister = IcaRegister
+    def IcaRegister(self, icaRegister):
+        self._icaRegister = icaRegister 
     
     @property
     def price(self):
-        return self.price
+        return self._price  
     
     @price.setter
     def price(self, price):
-        self.price = price
+        self._price = price 
 
     @property
     def productName(self):
-        return self.productName
+        return self._productName 
     
     @productName.setter
     def productName(self, productName):
-        self.productName = productName
+        self._productName = productName  
 
     @property
-    def frecuencyProdct(self):
-        return self.frecuencyProdct
+    def frequencyProduct(self):
+        return self._frequencyProduct 
     
-    @frecuencyProdct.setter
-    def frecuencyProdct(self, frecuencyProdct):
-        self.frecuencyProdct = frecuencyProdct
+    @frequencyProduct.setter
+    def frequencyProduct(self, frequencyProduct):
+        self._frequencyProduct = frequencyProduct  
