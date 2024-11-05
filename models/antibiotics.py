@@ -6,6 +6,7 @@ class Antibiotics:
         self.dose = dose
         self.price = price
         self.animals_for_dose = animals_for_dose
+        self.numberOfProducts = {}
 
     
     @property
