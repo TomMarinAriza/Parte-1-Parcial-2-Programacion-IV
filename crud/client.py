@@ -27,8 +27,14 @@ class ClientCrud:
                 return client
         return None
 
+    def addBillToClient(self, client_id, bill):
+        client = self.findClientById(client_id)
+        if client:
+            client.addBills(bill)
+            return True
+        return False
+
     def searchById(self, id):
-        
         client = self.findClientById(id)
         if client:
             bills_info = []

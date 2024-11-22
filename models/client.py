@@ -2,7 +2,7 @@ class Client:
     def __init__(self, name, id):
         self._name = name
         self._id = id
-        self.history = [] 
+        self._bills = []  
 
     @property
     def name(self):
@@ -20,8 +20,16 @@ class Client:
     def id(self, id):
         self._id = id
 
-    def addBills(self, bill):
-        self.history.append(bill)  
+    def addBill(self, bill):
+        """
+        Añade una factura al historial de facturas del cliente.
+        :param bill: Instancia de la clase Bill.
+        """
+        self._bills.append(bill)  
 
     def getBills(self):
-        return self.history  
+        """
+        Devuelve el historial de facturas del cliente.
+        """
+        return self._bills
+    
